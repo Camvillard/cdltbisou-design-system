@@ -8,12 +8,13 @@ type TitleProps = {
   children: React.ReactNode;
   size: Breakpoint<number>;
   color?: string;
+  spread?: boolean;
 };
 
 export const Title = (props: TitleProps) => {
-  const { as, children, color, size } = props;
+  const { as, children, color, size, spread } = props;
   return (
-    <TitleWrapper as={as} color={color} size={size}>
+    <TitleWrapper as={as} color={color} size={size} spread={spread}>
       {children}
     </TitleWrapper>
   );

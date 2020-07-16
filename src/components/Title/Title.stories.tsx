@@ -1,5 +1,5 @@
 import React from "react";
-import { withKnobs, select } from "@storybook/addon-knobs";
+import { withKnobs, select, boolean } from "@storybook/addon-knobs";
 import { Title } from "./Title.component";
 import { themeColors } from "theme/theme";
 import { Header } from "shared/types/Header.type";
@@ -23,6 +23,19 @@ const titleSizes: Breakpoint<number> = {
 export const MainTitle = () => {
   return (
     <Title as={"h1"} color={darkGray} size={titleSizes}>
+      main title
+    </Title>
+  );
+};
+
+export const SpreadTitle = () => {
+  return (
+    <Title
+      as={"h1"}
+      color={darkGray}
+      size={titleSizes}
+      spread={boolean("spread", false, "GROUP-ID1")}
+    >
       main title
     </Title>
   );

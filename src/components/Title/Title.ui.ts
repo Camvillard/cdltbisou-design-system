@@ -5,6 +5,7 @@ import { Breakpoint } from "shared/types/Breakpoints.type";
 type TitleWrapperProps = {
   size: Breakpoint<number>;
   color?: string;
+  spread?: boolean;
 };
 
 const { darkGray } = themeColors;
@@ -12,7 +13,7 @@ const { xsm, sm, md, lg, xl } = themeBreakpoints;
 
 export const TitleWrapper = styled.div<TitleWrapperProps>`
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: ${(props) => (props.spread ? "2px" : "0")};
   color: ${(props) => props.color || darkGray};
   font-size: ${(props) => props.size.default}rem;
   @media (min-width: ${xsm}) {
